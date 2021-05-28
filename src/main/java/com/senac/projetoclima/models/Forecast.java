@@ -1,22 +1,25 @@
 package com.senac.projetoclima.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Forecast {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private  Long id;
+public class Forecast implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        private String date;
-        private String weekday;
-        private int max;
-        private int min;
-        private String description;
-        private String condition;
+    @ManyToOne
+    @JoinColumn(name = "results_id")
+    private Results results;
+
+
+    private String date;
+    private String weekday;
+    private int max;
+    private int min;
+    private String description;
+    private String condition;
 
     public Long getId() {
         return id;

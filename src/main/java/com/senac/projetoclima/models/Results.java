@@ -1,9 +1,12 @@
 package com.senac.projetoclima.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -13,6 +16,7 @@ public class Results implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
     private int temp;
     private String date;
     private String time;
@@ -28,6 +32,9 @@ public class Results implements Serializable {
     private String sunset;
     private String condition_slug;
     private String city_name;
+
+
+    @OneToMany(mappedBy="results")
     private List<Forecast> forecast;
 
     public Long getId() {
@@ -163,6 +170,11 @@ public class Results implements Serializable {
     }
 
     public void setForecast(List<Forecast> forecast) {
-       this.forecast = forecast;
+        this.forecast = forecast;
     }
+
+
+
+
+
 }

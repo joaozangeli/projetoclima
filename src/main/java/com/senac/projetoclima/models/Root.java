@@ -1,19 +1,20 @@
 package com.senac.projetoclima.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Root {
+public class Root implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String by;
     private boolean valid_key;
+
+    @OneToMany(mappedBy = "results")
     private Results results;
+
     private double execution_time;
     private boolean from_cache;
 
