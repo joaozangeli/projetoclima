@@ -3,28 +3,14 @@ package com.senac.projetoclima.models;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-public class Root implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Root  {
+
 
     private String by;
     private boolean valid_key;
-
-    @OneToMany(mappedBy = "results")
     private Results results;
-
     private double execution_time;
     private boolean from_cache;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getBy() {
         return by;

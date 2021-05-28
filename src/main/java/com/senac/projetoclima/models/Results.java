@@ -16,7 +16,6 @@ public class Results implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
     private int temp;
     private String date;
     private String time;
@@ -34,8 +33,6 @@ public class Results implements Serializable {
     private String city_name;
 
 
-    @OneToMany(mappedBy="results")
-    private List<Forecast> forecast;
 
     public Long getId() {
         return id;
@@ -163,14 +160,6 @@ public class Results implements Serializable {
 
     public void setCity_name(String city_name) {
         this.city_name = city_name;
-    }
-
-    public List<Forecast> getForecast() {
-        return forecast;
-    }
-
-    public void setForecast(List<Forecast> forecast) {
-        this.forecast = forecast;
     }
 
 
