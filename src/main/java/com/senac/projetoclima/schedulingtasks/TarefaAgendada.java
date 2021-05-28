@@ -21,9 +21,11 @@ public class TarefaAgendada {
         RestTemplate restTemplate = new RestTemplate();
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         restTemplate = restTemplateBuilder.build();
+        String lat="-20.3174967";
+        String longi="-40.3085394";
 
         Root root =  restTemplate.getForObject(
-                "https://api.hgbrasil.com/weather",
+                "https://api.hgbrasil.com/weather?key=fae1d340&lat="+lat+"&lon="+longi+"",
                 Root.class);
 
         Results results = new Results();
