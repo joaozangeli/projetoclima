@@ -1,0 +1,30 @@
+#body {
+    background-image: linear-gradient(to right, rgb(60, 60, 187), purple);
+}
+
+.footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: linear-gradient(to right, rgb(60, 60, 187), purple);
+}
+
+.h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(206, 162, 66);
+    text-align: center;
+    width: 100%;
+    font-size: 70px;
+}
+
+.h4 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(206, 162, 66);
+    text-align: center;
+    width: 100%;
+}
+
+.card-title {
+    font-size: 75px;
+}
