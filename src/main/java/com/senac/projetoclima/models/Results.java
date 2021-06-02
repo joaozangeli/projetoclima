@@ -1,14 +1,7 @@
 package com.senac.projetoclima.models;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 public class Results implements Serializable {
@@ -32,7 +25,27 @@ public class Results implements Serializable {
     private String condition_slug;
     private String city_name;
 
+    public Results update(Results results) {
+        this.id = results.getId();
+        this.temp = results.getTemp();
+        this.date = results.getDate();
+        this.time = results.getTime();
+        this.condition_code = results.getCondition_code();
+        this.description = results.getDescription();
+        this.currently = results.getCurrently();
+        this.cid = results.getCid();
+        this.city = results.getCity();
+        this.img_id = results.getImg_id();
+        this.humidity = results.getHumidity();
+        this.wind_speedy = results.getWind_speedy();
+        this.sunrise = results.getSunrise();
+        this.sunset =results.getSunset();
+        this.condition_slug = results.getCondition_slug();
+        this.city_name =results.getCity_name();
 
+
+      return this;
+    }
 
     public Long getId() {
         return id;
@@ -161,7 +174,6 @@ public class Results implements Serializable {
     public void setCity_name(String city_name) {
         this.city_name = city_name;
     }
-
 
 
 
