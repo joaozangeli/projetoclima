@@ -26,7 +26,6 @@ public class Results implements Serializable {
     private String city_name;
 
     public Results update(Results results) {
-        this.id = results.getId();
         this.temp = results.getTemp();
         this.date = results.getDate();
         this.time = results.getTime();
