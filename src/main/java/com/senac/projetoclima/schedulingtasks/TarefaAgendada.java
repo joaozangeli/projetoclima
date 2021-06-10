@@ -10,14 +10,13 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 @Component
 public class TarefaAgendada {
     @Autowired
     ResultsRepository resultsRepository;
-
-
 
     @Scheduled(fixedRate = 5000)
     public void verificarResults(){
@@ -31,12 +30,13 @@ public class TarefaAgendada {
                 "https://api.hgbrasil.com/weather?key=fae1d340&lat="+lat+"&lon="+longi+"",
                 Root.class);
 
+
         Results results = new Results();
 
         results = root.getResults();
 
-        Results resultsEncontrado = resultsRepository.findResultsByDate(results.getDate());
-        if (resultsEncontrado == null){
+        Results resultsEncontrado = resultsRepository.findResultsByCityAndDate(results.getCity(), results.getDate());
+        if (resultsEncontrado ==null){
             System.out.println("Criando novo registro");
 
             resultsRepository.save(results);

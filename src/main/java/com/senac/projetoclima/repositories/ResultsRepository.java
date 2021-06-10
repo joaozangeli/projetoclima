@@ -9,6 +9,9 @@ import java.util.List;
 
 @Repository
 public interface ResultsRepository extends JpaRepository<Results, Long> {
+    //Results findResultsByDate(String date);
 
-    Results findResultsByDate(String date);
+    //Results findResultsByCity_nameAndDate(String city_name, String date);
+
+    Results findResultsByCityAndDate(String city, String date);
 }
