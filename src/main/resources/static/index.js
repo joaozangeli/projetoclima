@@ -14,3 +14,5 @@ if (navigator.geolocation) {
             "<br>Longitude: " + position.coords.longitude;
     }
     console.log(x);
+    console.log(latitude);
+    console.log(longitude);
