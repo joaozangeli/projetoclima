@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+                  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,6 +52,10 @@
         </div>
     </div>
 </footer>
+
+<div layout:fragment="content">
+    <p>Changing contents</p>
+</div>
 
 
 <script src="index.js"></script>

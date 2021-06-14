@@ -27,7 +27,7 @@ public class TarefaAgendada {
         String longi="-40.3085394";
 
         Root root =  restTemplate.getForObject(
-                "https://api.hgbrasil.com/weather?key=fae1d340&lat="+lat+"&lon="+longi+"",
+                "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+longi+"",
                 Root.class);
 
 
