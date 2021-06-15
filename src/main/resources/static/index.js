@@ -1,3 +1,4 @@
+
 var x = document.getElementById("demo");
 
 if (navigator.geolocation) {
@@ -10,8 +11,13 @@ if (navigator.geolocation) {
         x.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
 
-            $.post("/sendposition", {lat:position.coords.latitude, long:position.coords.longitude}, function(resp){
-            console.log(resp)
-            } )
+            $.ajax({
+                    url: "/sendposition",
+                    method: "POST",
+                    dataType: "json",
+                    data: {lat:position.coords.latitude, lng:position.coords.longitude}
+                }).then(function(data) {
+                         console.log("cheguei aqui");
+                });
     }
     console.log(x);
