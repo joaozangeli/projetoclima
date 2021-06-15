@@ -17,7 +17,8 @@ import java.util.List;
 public class TarefaAgendada {
     @Autowired
     ResultsRepository resultsRepository;
-
+    private String lat;
+    private String lng;
     @Scheduled(fixedRate = 5000)
     public void verificarResults(){
         RestTemplate restTemplate = new RestTemplate();
