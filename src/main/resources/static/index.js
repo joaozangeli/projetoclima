@@ -1,23 +1,28 @@
+document.addEventListener("DOMContentLoaded", function(event){
 
-var x = document.getElementById("demo");
+    if(navigator.geolocation){
+       navigator.geolocation.getCurrentPosition( function(position){
+            const lat = position.coords.latitude;
+            const lng =  position.coords.longitude;
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-} else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-}
+           console.log(position.coords.latitude + " " + position.coords.longitude);
 
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
+           $.ajax({
+            contentType: "application/json; charset=utf-8",
+              url: '/position/1',
+              type: "put",
+              contentType: 'application/json',
+              data: JSON.stringify({latitude: lat, longitude: lng }),
+              success: function(resp){
+                 console.log(resp);
+              },
+              error: function(error){
+                console.log(error);
+              }
+           });
 
-            $.ajax({
-                    url: "/sendposition",
-                    method: "POST",
-                    dataType: "json",
-                    data: {lat:position.coords.latitude, lng:position.coords.longitude}
-                }).then(function(data) {
-                         console.log("cheguei aqui");
-                });
+       });
+    } else {
+       alert("Seu navegador não suporta geolocalização.");
     }
-    console.log(x);
+});

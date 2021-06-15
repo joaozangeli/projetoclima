@@ -2,6 +2,7 @@ package com.senac.projetoclima.schedulingtasks;
 
 import com.senac.projetoclima.models.Results;
 import com.senac.projetoclima.models.Root;
+import com.senac.projetoclima.repositories.PositionRepository;
 import com.senac.projetoclima.repositories.ResultsRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +18,20 @@ import java.util.List;
 public class TarefaAgendada {
     @Autowired
     ResultsRepository resultsRepository;
+
+    @Autowired
+    PositionRepository positionRepository;
+
     private String lat;
     private String lng;
-    @Scheduled(fixedRate = 5000)
+
+    @Scheduled(fixedRate = 50000000)
     public void verificarResults(){
         RestTemplate restTemplate = new RestTemplate();
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         restTemplate = restTemplateBuilder.build();
-        String lat="-20.3174967";
-        String longi="-40.3085394";
+        String lat=   positionRepository.getById(1L).getLatitude(); //"-20.3174967";
+        String longi= positionRepository.getById(1L).getLongitude();   //"-40.3085394";
 
         Root root =  restTemplate.getForObject(
                 "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+longi+"",
