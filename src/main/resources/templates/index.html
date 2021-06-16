@@ -31,8 +31,14 @@
             <img src="https://cdn.dribbble.com/users/150724/screenshots/14933595/media/779ed39d9edf4d224c5282ad67b1cc4c.png?compress=1&resize=1000x750"
                  class="card-img" alt="img1">
             <div class="card-img-overlay">
-                <h5 class="card-title text-white">5°c</h5>
-                <p class="card-text text-white"><i>"Vai sair? Melhor ir de jaqueta!"</i></p>
+                <div class="alert alert-info" th:text="| Latitude: ${latitude}  Longitude: ${longitude}|"></div>
+
+                <h5 class="card-title text-white"><span th:text="${temperatura}"></span>ºC</h5>
+
+                <!-- <p class="text-center" th:if="${temperatura} < 20" class="card-text text-white"><i>Lá está frio hoje</i></p> -->
+                <!-- <p class="text-center" th:if="${temperatura} < 25" class="card-text text-white"><i>Lá está um clima ameno</i></p> -->
+                <!-- <p class="text-center" th:if="${temperatura} < 44" class="card-text text-white"><i>Lá está um calor de lascar</i></p> -->
+
 
             </div>
         </div>
