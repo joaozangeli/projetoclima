@@ -14,4 +14,5 @@ public interface ResultsRepository extends JpaRepository<Results, Long> {
     //Results findResultsByCity_nameAndDate(String city_name, String date);
 
     Results findResultsByCityAndDate(String city, String date);
+    //Results findFirst();
 }

@@ -43,19 +43,20 @@ public class TarefaAgendada {
         results = root.getResults();
 
         Results resultsEncontrado = resultsRepository.findResultsByCityAndDate(results.getCity(), results.getDate());
+
         if (resultsEncontrado ==null){
             System.out.println("Criando novo registro");
-
             resultsRepository.save(results);
         }else {
             System.out.println("registro encontrado");
+
             Results resultsAtualizado = resultsEncontrado.update(results);
 
+            int i = resultsRepository.findAll().indexOf(resultsAtualizado);
 
-            resultsRepository.save(resultsAtualizado);
+            resultsRepository.getOne((long) i);
+            resultsRepository.save( resultsRepository.getOne((long) i));
         }
-
-
 
         System.out.println();
     }
