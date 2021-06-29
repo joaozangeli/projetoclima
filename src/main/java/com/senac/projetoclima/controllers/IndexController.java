@@ -4,13 +4,13 @@ import com.senac.projetoclima.models.Position;
 import com.senac.projetoclima.models.Results;
 import com.senac.projetoclima.repositories.PositionRepository;
 import com.senac.projetoclima.repositories.ResultsRepository;
+import com.senac.projetoclima.services.ClimaService;
 import org.omg.CORBA.PRIVATE_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 
@@ -22,27 +22,33 @@ public class IndexController {
     @Autowired
     ResultsRepository resultsRepository;
 
+    @Autowired
+    ClimaService climaService;
+
     private static String position = "";
 
     private int temperatura;
     private String cidade;
 
-    @RequestMapping("/")
-    public String index(Model model){
+    @GetMapping("/")
+    public String index(){
 
-        Position pos = positionRepository.getById(1L);
-        model.addAttribute("latitude", pos.getLatitude());
-        model.addAttribute("longitude", pos.getLongitude());
-
-        //model.addAttribute("serverTime", new Date().toString())  ;
-        temperatura = getInfoTemp();
-        cidade = getInfoCity();
-
-        System.out.println("Temperatura: "  +  temperatura);
-        model.addAttribute("temperatura", temperatura);
-        model.addAttribute("cidade", cidade);
 
         return "index";
+    }
+
+
+    @PostMapping("/")
+    public ModelAndView findClima(){
+
+        ModelAndView modelAndView = new ModelAndView("index");
+        Results results = new Results();
+
+        results = climaService.findClima("-20.5410651","40.0000");
+
+        modelAndView.addObject("results",results);
+
+        return modelAndView;
     }
     private int getInfoTemp(){
 
