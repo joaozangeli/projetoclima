@@ -4,7 +4,9 @@ import com.senac.projetoclima.models.Position;
 import com.senac.projetoclima.models.Results;
 import com.senac.projetoclima.repositories.PositionRepository;
 import com.senac.projetoclima.repositories.ResultsRepository;
-import com.senac.projetoclima.services.ClimaService;
+import com.senac.projetoclima.schedulingtasks.TarefaAgendada;
+import com.senac.projetoclima.services.ResultServices;
+import javafx.geometry.Pos;
 import org.omg.CORBA.PRIVATE_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,10 +22,7 @@ public class IndexController {
     PositionRepository positionRepository;
 
     @Autowired
-    ResultsRepository resultsRepository;
-
-    @Autowired
-    ClimaService climaService;
+    ResultServices resultServices;
 
     private static String position = "";
 
@@ -31,50 +30,16 @@ public class IndexController {
     private String cidade;
 
     @GetMapping("/")
-    public String index(){
+    public String index(Model model){
+
 
 
         return "index";
     }
 
 
-    @PostMapping("/")
-    public ModelAndView findClima(){
-
-        ModelAndView modelAndView = new ModelAndView("index");
-        Results results = new Results();
-
-        results = climaService.findClima("-20.5410651","40.0000");
-
-        modelAndView.addObject("results",results);
-
-        return modelAndView;
-    }
-    private int getInfoTemp(){
 
 
-        //Results ultimo = resultsRepository.
-        int t = 0;
 
-        //int ultimo = resultsRepository.findAll().size() -1;
-        for ( Results r: resultsRepository.findAll() ) {
-            t = r.getTemp();
-        }
 
-        System.out.println(t);
-        //System.out.println(resultsRepository.findFirst());
-        //System.out.println(resultsRepository.findAll().stream().findFirst().get().getTemp());
-        return t;
-
-    }
-
-    private String getInfoCity(){
-        return resultsRepository.findAll().get(0).getCity();
-    }
-
-    @RequestMapping(value="/sendposition", method=RequestMethod.POST)
-    public String sendPosition(@RequestBody String lat, String lng){
-        System.out.println("Latitude: " + lat + "Longitude: " + lng);
-        return "home/position";
-    }
 }

@@ -1,21 +1,16 @@
-package com.senac.projetoclima.schedulingtasks;
+package com.senac.projetoclima.services;
 
 import com.senac.projetoclima.models.Results;
 import com.senac.projetoclima.models.Root;
 import com.senac.projetoclima.repositories.PositionRepository;
 import com.senac.projetoclima.repositories.ResultsRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.sql.SQLOutput;
-import java.util.List;
-
-@Component
-public class TarefaAgendada {
+@Service
+public class ResultServices {
     @Autowired
     ResultsRepository resultsRepository;
 
@@ -26,15 +21,14 @@ public class TarefaAgendada {
     private String lng;
 
     //@Scheduled(fixedRate = 50000000)
-    public void verificarResults(){
+    public Results verificarResults(String lat, String lng){
         RestTemplate restTemplate = new RestTemplate();
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         restTemplate = restTemplateBuilder.build();
-        String lat=   "-20.3174967";
-        String longi= "-40.3085394";
+
 
         Root root =  restTemplate.getForObject(
-                "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+longi+"",
+                "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+lng+"",
                 Root.class);
 
 
@@ -54,6 +48,8 @@ public class TarefaAgendada {
         if (resultsEncontrado == null){
             System.out.println("Criando novo registro");
             resultsRepository.save(results);
+            return results;
+
         }else {
             System.out.println("registro encontrado");
 
@@ -63,8 +59,9 @@ public class TarefaAgendada {
 
             resultsRepository.getOne((long) i);
             resultsRepository.save( resultsRepository.getOne((long) i));
+
+            return resultsAtualizado;
         }
 
-        System.out.println();
     }
 }
