@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function(event){
               success: function(resp){
                  console.log(resp);
                  //modificar valor temperatura a partir do id
+                 var x = document.getElementById("temperatura");
+                 x.innerText = resp;
               },
               error: function(error){
                 console.log(error);
