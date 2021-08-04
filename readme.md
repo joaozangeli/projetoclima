@@ -38,9 +38,9 @@ Caso a condição climática da noite não seja encontrada, essa condição é a
 **Incidência 3: default**
 Caso nenhuma condição climática seja encontrada, essa condição é acessada e exibe sua mensagem de erro.
 ### 6.1 Mensagens de erro.
-•	“Erro ao obter condição do dia” caso acesse condição none_day.
-•	“Erro ao obter condição da noite” caso acesse condição none_night.
-•	“Condição não encontrada” caso acesse condição default.
+**“Erro ao obter condição do dia” caso acesse condição none_day.**
+**“Erro ao obter condição da noite” caso acesse condição none_night.**
+**“Condição não encontrada” caso acesse condição default.**
 
 
 ## 7. Algumas capturas de telas
