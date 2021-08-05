@@ -4,7 +4,7 @@ O ClimaWeb tem como objetivo trazer a temperatura e a condição climática de f
 
 ## 1. Configurações
 
-### Requisitos
+### Requisitos para Usuário 
 
 O aplicativo pode ser executado em configurações básicas de hardware pois não desempenha tarefas muito complexas que o sobrecarreguem.
 
@@ -14,14 +14,22 @@ Memória: 2GB DDR3
 
 Sistema operacional: 32bits ou superior
 
+### Requisitos para Desenvolvedor
+
+Utilizamos o JDK 8 para o desenvolvimento desta aplicação web.
+O ambiente (IDE) usado para confecção do código foi o Intellij.
+
 ## 2. Biblioteca
 Usamos Retrofit para converter o JSON recebido pela API no nosso objeto java.
 
 ## 3. Banco de dados
-O banco de dados utilizado para salvar os dados na aplicação web foi o H2.
+O banco de dados local utilizado para salvar os dados na aplicação web foi o H2.
 
-## 4. Api
-Utilizamos a Api da HGBrasil, a HG Weather, que nos deu o objeto usado na aplicação.
+## 4. API
+Utilizamos a Api da HGBrasil, a HG Weather, que nos deu o JSON posteriormente convertido no objeto usado na aplicação.
+
+###Endpoint utilizada
+"https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+longi+"" foi o endpoint configurado para a comunicação entre o Retrofit e a API.
 
 ## 5. Procedimentos
 
