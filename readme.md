@@ -23,7 +23,7 @@ O ambiente (IDE) usado para confecção do código foi o Intellij.
 Usamos Retrofit para converter o JSON recebido pela API no nosso objeto java.
 
 ## 3. Banco de dados
-O banco de dados local utilizado para salvar os dados na aplicação web foi o H2.
+O banco de dados local utilizado para salvar os dados mostrados na aplicação web foi o H2.
 
 ## 4. API
 Utilizamos a Api da HGBrasil, a HG Weather, que nos deu o JSON posteriormente convertido no objeto usado na aplicação.
