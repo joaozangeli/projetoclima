@@ -34,8 +34,8 @@ O **HG Weather** é uma API que fornece dados de previsão do tempo e condiçõe
 **Incidência 3:** default Caso nenhuma condição climática seja encontrada, essa condição é acessada e exibe sua mensagem de erro.
 
 # Licenças
-Nossa aplicação possui licença MIT, ou seja, nosso código pode ser acessado e outras pessoas poderam 
-contribuir com a aplicação.
+Nossa aplicação possui licença MIT, ou seja, nosso código pode ser acessado, lido e outras pessoas poderam 
+contribuir com nossa aplicação.
 
 # 👤 Membros
 - João Egídio (back-end)
