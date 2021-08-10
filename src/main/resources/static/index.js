@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event){
 
     if(navigator.geolocation){
+
        navigator.geolocation.getCurrentPosition( function(position){
             const lat = position.coords.latitude;
             const lng =  position.coords.longitude;
@@ -18,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function(event){
                  //modificar valor temperatura a partir do id
                  var x = document.getElementById("temperatura");
                  x.innerText = resp;
+
+                                    var texto = "Confira a temperatura!";
+                                    var textoEncoded = encodeURIComponent (texto);
+                                    var link = `https://wa.me/5527988063886?text=${textoEncoded}%0a${x.innerText}°C neste momento`;
+                            document.getElementById("whatsapplink").href = link
               },
               error: function(error){
                 console.log(error);
