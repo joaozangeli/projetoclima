@@ -1,7 +1,7 @@
-# Clima Android
+# Clima
 
 ##  Descrição
-O **ClimaAndroid** é um aplicativo que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura em graus Celsius e a condição do clima atual.
+O **Clima** é um site que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura em graus Celsius e a condição do clima atual.
 
 # 🛠 Tecnologias
 - Java
@@ -17,10 +17,10 @@ O **ClimaAndroid** é um aplicativo que têm como propósito trazer informaçõe
 # 🖥️ Deploy
 ```bash
 # Clonar o repositorio
-git clone https://github.com/joaozangeli/ClimaAndroid
+git clone https://github.com/joaozangeli/projetoclima
 
 # Entrar na pasta do repositorio
-cd ClimaAndroid
+cd projetoclima
 ```
 
 # ☁️ API
