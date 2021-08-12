@@ -32,9 +32,16 @@ document.addEventListener("DOMContentLoaded", function(event){
               success: function(resp){ //resp aqui eh a sua temperatura
                  console.log(resp); //Ex: out = 21
 
+                 const object = JSON.parse(resp);
+
+                 document.body.style.backgroundImage="url("+(object.url_imagem)+")"
+
                  //modificar valor temperatura a partir do id
-                 var x = document.getElementById("temperatura");
-                 x.innerText = resp;
+                 var temperatura_minima = document.getElementById("temperatura_minima");
+                 var temperatura_maxima = document.getElementById("temperatura_maxima");
+
+                 temperatura_minima.innerText = object.min;
+                 temperatura_maxima.innerText = object.max;
 
                  // funcao q muda o texto de acordo com a temperatura (resp)
                  changeTextByTemp(resp)

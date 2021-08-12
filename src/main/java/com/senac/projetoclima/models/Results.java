@@ -2,6 +2,7 @@ package com.senac.projetoclima.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Results implements Serializable {
@@ -24,6 +25,17 @@ public class Results implements Serializable {
     private String sunset;
     private String condition_slug;
     private String city_name;
+
+    @OneToMany
+    public List<Forecast> forecast;
+
+    public List<Forecast> getForecast() {
+        return forecast;
+    }
+
+    public void setForecast(List<Forecast> forecast) {
+        this.forecast = forecast;
+    }
 
     public Results update(Results results) {
         this.temp = results.getTemp();

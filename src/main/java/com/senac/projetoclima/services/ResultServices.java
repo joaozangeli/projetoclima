@@ -1,5 +1,6 @@
 package com.senac.projetoclima.services;
 
+import com.senac.projetoclima.models.Forecast;
 import com.senac.projetoclima.models.Results;
 import com.senac.projetoclima.models.Root;
 import com.senac.projetoclima.repositories.PositionRepository;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Service
 public class ResultServices {
@@ -21,14 +24,14 @@ public class ResultServices {
     private String lng;
 
     //@Scheduled(fixedRate = 50000000)
-    public Results verificarResults(String lat, String lng){
+    public Forecast verificarResults(String lat, String lng){
         RestTemplate restTemplate = new RestTemplate();
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         restTemplate = restTemplateBuilder.build();
 
 
         Root root =  restTemplate.getForObject(
-                "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+lng+"",
+                "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+lng+"&time=20:30",
                 Root.class);
 
 
@@ -36,6 +39,13 @@ public class ResultServices {
 
         results = root.getResults();
 
+        List<Forecast> forecast = results.getForecast();
+
+        Forecast previsao = forecast.get(1);
+
+        return previsao;
+
+        /*
         Results resultsEncontrado=null;
         try{
             resultsEncontrado= resultsRepository.findResultsByCityAndDate(results.getCity(), results.getDate());
@@ -62,6 +72,8 @@ public class ResultServices {
 
             return resultsAtualizado;
         }
+
+         */
 
     }
 }
