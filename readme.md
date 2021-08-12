@@ -1,7 +1,7 @@
 # Clima
 
 ##  Descrição
-O **Clima** é um site que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura em graus Celsius e a condição do clima atual.
+O **Clima** é um site que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima atual.
 
 # 🛠 Tecnologias
 - Java
