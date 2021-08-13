@@ -31,7 +31,7 @@ public class ResultServices {
 
 
         Root root =  restTemplate.getForObject(
-                "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+lng+"&time=20:30",
+                "https://api.hgbrasil.com/weather?key=7b50a319&lat="+lat+"&lon="+lng+"",
                 Root.class);
 
 

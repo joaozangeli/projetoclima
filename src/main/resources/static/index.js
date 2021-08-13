@@ -1,17 +1,17 @@
-const changeTextByTemp = (temp) => {
-    //aqui vc pode usar um switch case mas eu vou deixar
-    //um if statement so de exemplo q dps vc faz o resto
-
-    const text = document.getElementById("text-temperatura");
-    if(temp >= 22) {
-      text.innerText = "Ta quente"
-    }
-    else if(temp <= 21 && temp >= 15) {
-      text.innerText = "Ta meio a meio"
-    } else {
-        text.innerText = "Ta frio"
-    }
-}
+//const changeTextByTemp = (temp) => {
+//    //aqui vc pode usar um switch case mas eu vou deixar
+//    //um if statement so de exemplo q dps vc faz o resto
+//
+//    const text = document.getElementById("text-temperatura");
+//    if(temp >= 22) {
+//      text.innerText = "Ta quente"
+//    }
+//    else if(temp <= 21 && temp >= 15) {
+//      text.innerText = "Ta meio a meio"
+//    } else {
+//        text.innerText = "Ta frio"
+//    }
+//}
 
 document.addEventListener("DOMContentLoaded", function(event){
 
@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function(event){
                  temperatura_maxima.innerText = object.max;
 
                  // funcao q muda o texto de acordo com a temperatura (resp)
-                 changeTextByTemp(resp)
+                 const text = document.getElementById("text-temperatura");
+                 text.innerText = object.mensagem;
 
                  // passa o texto e a temperatura por interpolacao para a url do whatsapp
                  var texto = "Confira a temperatura!";

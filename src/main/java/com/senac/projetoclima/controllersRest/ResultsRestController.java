@@ -31,52 +31,51 @@ public class ResultsRestController {
 
             case "storm":
                 forecast.setMensagem("Tempestade");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("TEMPESTADE.jpg");
 
                 break;
             case "snow":
                 forecast.setMensagem("Neve");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("NEVE.jpg");
 
                 break;
             case "hail":
                 forecast.setMensagem("Granizo");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("GRANIZO.jpg");
 
                 break;
             case "rain":
                 forecast.setMensagem("Está chovendo");
-                forecast.setUrl_imagem("");
-
+                forecast.setUrl_imagem("CHUVA.jpg");
                 break;
             case "fog":
                 forecast.setMensagem("Névoa");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("NEBLINA.jpg");
 
                 break;
             case "clear_day":
                 forecast.setMensagem("Dia Claro");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("DIA_CLARO.jpg");
 
                 break;
             case "clear_night":
                 forecast.setMensagem("Noite clara");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("NOITE_CLARA.jpg");
 
                 break;
             case "cloud":
                 forecast.setMensagem("Está nublado");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("NUBLADO.jpg");
 
                 break;
             case "cloudly_day":
                 forecast.setMensagem("Dia nublado");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("DIA_NUBLADO.jpg");
 
                 break;
             case "cloudly_night":
                 forecast.setMensagem("Noite nublada ");
-                forecast.setUrl_imagem("cloudly-night.jpeg");
+                forecast.setUrl_imagem("NOITE_NUBLADA.jpg");
 
                 break;
             case "none_day":
@@ -97,7 +96,7 @@ public class ResultsRestController {
         }
 
 
-        forecast.setMensagem("qualquer coisa");
+
 
         String json="";
 
