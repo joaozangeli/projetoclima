@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function(event){
 
                  const object = JSON.parse(resp);
 
-                 document.body.style.backgroundImage="url("+(object.url_imagem)+")"
+                 const coisa = document.getElementById("card");
+                 card.style.backgroundImage="url("+(object.url_imagem)+")"
 
                  //modificar valor temperatura a partir do id
                  var temperatura_minima = document.getElementById("temperatura_minima");
