@@ -1,7 +1,10 @@
 # Clima
 
 ##  Descrição
-O **Clima** é um site que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia posterior.
+O **Clima** é um site que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia seguinte.
+
+## Procedimentos
+Ao acessar o site e habilitar a localização, uma requisição é feita a API que estamos utilizando, e as temperaturas máxima, mínima e a condição do clima são trazidas para a interface.
 
 # 🛠 Tecnologias
 - Java
