@@ -1,6 +1,6 @@
 # Clima
 <p align="center">
-  <img src="telaprojetoclima.png" />
+  <img src="telaPROJETOCLIMA2.png" />
 </p>
 
 ##  Descrição
