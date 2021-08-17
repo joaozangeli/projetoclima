@@ -1,4 +1,7 @@
 # Clima
+<p align="center">
+  <img src="telaprojetoclima.png" />
+</p>
 
 ##  Descrição
 O **Clima** é um site que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia seguinte.
@@ -39,6 +42,12 @@ O **HG Weather** é uma API que fornece dados de previsão do tempo e condiçõe
 # Licenças
 Nossa aplicação possui licença MIT, ou seja, nosso código pode ser acessado, lido e outras pessoas poderam 
 contribuir com nossa aplicação.
+
+# 🔗 Links importantes
+- **Spring** - https://spring.io/
+- **Documentação API** - https://hgbrasil.com/status/weather
+- **IDE Intellij** - https://www.jetbrains.com/pt-br/idea/
+
 
 # 👤 Membros
 - João Egídio (back-end)
