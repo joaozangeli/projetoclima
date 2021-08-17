@@ -3,6 +3,10 @@
   <img src="telaPROJETOCLIMA2.png" />
 </p>
 
+<p align="center">
+https://funnyweather.herokuapp.com/
+</p>
+
 ##  Descrição
 O **Clima** é um site que têm como propósito trazer informações do clima de forma rápida e intuitiva, trazendo a temperatura máxima e minima em graus celsius e a condição do clima do dia seguinte.
 

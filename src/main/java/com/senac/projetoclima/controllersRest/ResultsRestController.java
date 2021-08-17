@@ -86,12 +86,12 @@ public class ResultsRestController {
                 break;
             case "none_night":
                 forecast.setMensagem("Não achou condição da noite seguinte.");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("error.jpg");
 
                 break;
             default:
                 forecast.setMensagem("Não achou a condição.");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("error.jpg");
 
 
         }
