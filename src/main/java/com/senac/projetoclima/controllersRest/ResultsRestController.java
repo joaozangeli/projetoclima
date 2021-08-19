@@ -30,52 +30,52 @@ public class ResultsRestController {
         switch (forecast.getCondition()){
 
             case "storm":
-                forecast.setMensagem("O dia terá uma tempestade");
+                forecast.setMensagem("Tempestade amanhã");
                 forecast.setUrl_imagem("TEMPESTADE.jpg");
 
                 break;
             case "snow":
-                forecast.setMensagem("Dia será de neve");
+                forecast.setMensagem("Neve amanhã");
                 forecast.setUrl_imagem("NEVE.jpg");
 
                 break;
             case "hail":
-                forecast.setMensagem("Choverá granizo");
+                forecast.setMensagem("Chuva com granizo amanhã");
                 forecast.setUrl_imagem("GRANIZO.jpg");
 
                 break;
             case "rain":
-                forecast.setMensagem("Irá chover");
+                forecast.setMensagem("Chuva amanhã");
                 forecast.setUrl_imagem("CHUVA.jpg");
                 //"vai chover"
                 break;
             case "fog":
-                forecast.setMensagem("Possibilidade de névoa");
+                forecast.setMensagem("Névoa amanha");
                 forecast.setUrl_imagem("NEBLINA.jpg");
 
                 break;
             case "clear_day":
-                forecast.setMensagem("Dia será claro");
+                forecast.setMensagem("Dia claro amanhã");
                 forecast.setUrl_imagem("DIA_CLARO.jpg");
 
                 break;
             case "clear_night":
-                forecast.setMensagem("Noite será clara");
+                forecast.setMensagem("Noite clara amanhã");
                 forecast.setUrl_imagem("NOITE_CLARA.jpg");
 
                 break;
             case "cloud":
-                forecast.setMensagem("Dia com muitas nuvens");
+                forecast.setMensagem("Nuvens carregadas amanhã");
                 forecast.setUrl_imagem("NUBLADO.jpg");
 
                 break;
             case "cloudly_day":
-                forecast.setMensagem("O dia será nublado");
+                forecast.setMensagem("Dia nublado amanhã");
                 forecast.setUrl_imagem("DIA_NUBLADO.jpg");
 
                 break;
             case "cloudly_night":
-                forecast.setMensagem("Dia e noite serão nublados ");
+                forecast.setMensagem("Noite nublada amanhã");
                 forecast.setUrl_imagem("NOITE_NUBLADA.jpg");
 
                 break;
