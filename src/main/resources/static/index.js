@@ -49,9 +49,7 @@ document.addEventListener("DOMContentLoaded", function(event){
                  text.innerText = object.mensagem;
 
                  // passa o texto e a temperatura por interpolacao para a url do whatsapp
-                 var texto = "Confira a temperatura!";
-                 var textoEncoded = encodeURIComponent (texto);
-                 var link = `https://wa.me/5527988063886?text=${textoEncoded}%0a${x.innerText}°C neste momento`;
+                 var link = `https://wa.me/send?text=${object.mensagem} amanha`;
                  document.getElementById("whatsapplink").href = link
               },
               error: function(error){

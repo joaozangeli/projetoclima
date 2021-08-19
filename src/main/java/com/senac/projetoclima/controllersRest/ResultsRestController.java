@@ -30,12 +30,12 @@ public class ResultsRestController {
         switch (forecast.getCondition()){
 
             case "storm":
-                forecast.setMensagem("Se prepare para a tempestade");
+                forecast.setMensagem("O dia terá uma tempestade");
                 forecast.setUrl_imagem("TEMPESTADE.jpg");
 
                 break;
             case "snow":
-                forecast.setMensagem("Nevará");
+                forecast.setMensagem("Dia será de neve");
                 forecast.setUrl_imagem("NEVE.jpg");
 
                 break;
@@ -75,7 +75,7 @@ public class ResultsRestController {
 
                 break;
             case "cloudly_night":
-                forecast.setMensagem("Noite será nublada ");
+                forecast.setMensagem("Dia e noite serão nublados ");
                 forecast.setUrl_imagem("NOITE_NUBLADA.jpg");
 
                 break;
