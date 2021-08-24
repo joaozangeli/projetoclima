@@ -1,4 +1,4 @@
-# Projeto Clima
+# Projeto Clima web
 <p align="center">
   <img src="telaPROJETOCLIMA2.png" />
 </p>
