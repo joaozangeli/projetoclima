@@ -31,55 +31,55 @@ public class ResultsRestController {
 
             case "storm":
                 forecast.setMensagem("Tempestade amanhã");
-                forecast.setUrl_imagem("TEMPESTADE.jpg");
+                forecast.setUrl_imagem("imagens/TEMPESTADE.jpg");
                 break;
             case "snow":
                 forecast.setMensagem("Neve amanhã");
-                forecast.setUrl_imagem("NEVE.jpg");
+                forecast.setUrl_imagem("imagens/NEVE.jpg");
                 break;
             case "hail":
                 forecast.setMensagem("Chuva com granizo amanhã");
-                forecast.setUrl_imagem("GRANIZO.jpg");
+                forecast.setUrl_imagem("imagens/GRANIZO.jpg");
                 break;
             case "rain":
                 forecast.setMensagem("Chuva amanhã");
-                forecast.setUrl_imagem("CHUVA.jpg");
+                forecast.setUrl_imagem("imagens/CHUVA.jpg");
                 break;
             case "fog":
                 forecast.setMensagem("Névoa amanha");
-                forecast.setUrl_imagem("NEBLINA.jpg");
+                forecast.setUrl_imagem("imagens/NEBLINA.jpg");
                 break;
             case "clear_day":
                 forecast.setMensagem("Dia claro amanhã");
-                forecast.setUrl_imagem("DIA_CLARO.jpg");
+                forecast.setUrl_imagem("imagens/DIA_CLARO.jpg");
                 break;
             case "clear_night":
                 forecast.setMensagem("Noite clara amanhã");
-                forecast.setUrl_imagem("NOITE_CLARA.jpg");
+                forecast.setUrl_imagem("imagens/NOITE_CLARA.jpg");
                 break;
             case "cloud":
                 forecast.setMensagem("Nuvens carregadas amanhã");
-                forecast.setUrl_imagem("NUBLADO.jpg");
+                forecast.setUrl_imagem("imagens/NUBLADO.jpg");
                 break;
             case "cloudly_day":
                 forecast.setMensagem("Dia nublado amanhã");
-                forecast.setUrl_imagem("DIA_NUBLADO.jpg");
+                forecast.setUrl_imagem("imagens/DIA_NUBLADO.jpg");
                 break;
             case "cloudly_night":
                 forecast.setMensagem("Noite nublada amanhã");
-                forecast.setUrl_imagem("NOITE_NUBLADA.jpg");
+                forecast.setUrl_imagem("imagens/NOITE_NUBLADA.jpg");
                 break;
             case "none_day":
                 forecast.setMensagem("Não achou condição do dia seguinte.");
-                forecast.setUrl_imagem("");
+                forecast.setUrl_imagem("imagens/error.jpg");
                 break;
             case "none_night":
                 forecast.setMensagem("Não achou condição da noite seguinte.");
-                forecast.setUrl_imagem("error.jpg");
+                forecast.setUrl_imagem("imagens/error.jpg");
                 break;
             default:
                 forecast.setMensagem("Não achou a condição.");
-                forecast.setUrl_imagem("error.jpg");
+                forecast.setUrl_imagem("imagens/error.jpg");
 
 
         }

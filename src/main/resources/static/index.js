@@ -1,18 +1,3 @@
-//const changeTextByTemp = (temp) => {
-//    //aqui vc pode usar um switch case mas eu vou deixar
-//    //um if statement so de exemplo q dps vc faz o resto
-//
-//    const text = document.getElementById("text-temperatura");
-//    if(temp >= 22) {
-//      text.innerText = "Ta quente"
-//    }
-//    else if(temp <= 21 && temp >= 15) {
-//      text.innerText = "Ta meio a meio"
-//    } else {
-//        text.innerText = "Ta frio"
-//    }
-//}
-
 document.addEventListener("DOMContentLoaded", function(event){
 
     if(navigator.geolocation){
@@ -49,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event){
                  text.innerText = object.mensagem;
 
                  // passa o texto e a temperatura por interpolacao para a url do whatsapp
-                 var link = `https://wa.me/5527988063886?text=${object.mensagem}`;
+                 var link = `https://wa.me/?text=${object.mensagem} fonte https://funnyweather.herokuapp.com`;
                  document.getElementById("whatsapplink").href = link
               },
               error: function(error){
