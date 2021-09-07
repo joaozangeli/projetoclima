@@ -24,7 +24,7 @@ Ao acessar o site e habilitar a localização, uma requisição é feita a API q
 - Recomendado o uso da IDE Intellij.
 - Recomendado uso do Gradle para compilação do código.
 
-# 🖥️ Deploy
+# 🖥️ Instalação
 ```bash
 # Clonar o repositorio
 git clone https://github.com/joaozangeli/projetoclima
